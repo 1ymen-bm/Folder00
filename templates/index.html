@@ -1,0 +1,72 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Days Excluding Fridays</title>
+</head>
+<body>
+<style>
+   h1 {
+   text-align: right;
+    color: #333;
+}
+
+    form {
+
+background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    form>label{
+    text-align: right;
+    font-weight: bold;
+        fontsize: 15px;
+           
+        font-size: 50px;
+    }
+    form>input {
+        border: 2px solid black;right:
+        width:300px;
+        height: 50px;
+    }
+    #submit {
+font-size: 30px;
+   border: 2px solid black;
+        width: 100px;
+        height: 50px;
+        background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    }
+    
+  h2 {
+  text-align: right;
+    color: #007BFF;
+}
+    p{
+        font-size: 30px;
+        background-color: #e7f3ff;
+    padding: 10px;
+    border-left: 4px solid #007BFF
+    }
+
+
+</style>
+
+
+    <h1> حساب عدد ايام العمل عند قوشيحة </h1>
+    <form method="post">
+        <label for="discount_days">:عدد الغيابات</label><br><br>
+        <input type="number" id="discount_days" name="discount_days" min="0" value="{{ discount_days }}"><br><br>
+        <input id="submit" type="submit" value="ريقل">
+    </form>
+    {% if result is not none %}
+        <h2>النتيجة النهائية</h2>
+        <p>
+      ايام  خدمة {{ result }}  عندك 
+    {% endif %}
+</body>
+</html>

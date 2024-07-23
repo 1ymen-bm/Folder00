@@ -1,5 +1,5 @@
-rom datetime import datetime, timedelta
-from flask import Flask, request, render_template_string
+from datetime import datetime, timedelta
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
@@ -36,9 +36,7 @@ def home():
             discount_days = 0
         result = count_days_without_fridays(fixed_start_date, discount_days)
 
-    return render_template_string('''
-
-    ''', fixed_start_date=fixed_start_date, discount_days=discount_days, result=result)
+    return render_template('index.html', fixed_start_date=fixed_start_date, discount_days=discount_days, result=result)
 
 if __name__ == '__main__':
     app.run(debug=True)
